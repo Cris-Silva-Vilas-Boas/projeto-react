@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const Form = styled.form`
     width: 380px;
-    height: 350px;
+    height: 310px;
     padding: 30px;
     border-radius: 10px;
     background-color: ${props => props.theme.color.tertiary};

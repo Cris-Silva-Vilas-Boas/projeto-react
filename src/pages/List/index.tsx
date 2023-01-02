@@ -45,6 +45,7 @@ const List: React.FC  = () =>{
             <Error title="Erro interno"/>
         )
     }
+    
 
     dragons.sort((a, b) =>
         a.name > b.name ? 1 : -1,
@@ -63,7 +64,13 @@ const List: React.FC  = () =>{
                 dragons.map((dragon) => {
                     const onClickDelete = () => {
                         Dragons.deleteDragon(dragon.id)
-                        setModal(true);
+                        .then((data) => {
+                            console.log(data);
+                            setModal(true);
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
                     } 
 
                     return (

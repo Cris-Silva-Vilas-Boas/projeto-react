@@ -1,7 +1,11 @@
 import axios from 'axios';
+import { fireEvent, screen, render } from "@testing-library/react";
 import MockAdapter from "axios-mock-adapter";
 import DragonsMock from '../repositories/Dragons';
 import '@testing-library/jest-dom/extend-expect';
+import List from '../pages/List';
+import { ThemeProvider} from  'styled-components';
+import  themelight  from '../styles/themes/light';
 
 describe("get All Dragons", () => {
     let mock : any;
@@ -22,9 +26,9 @@ describe("get All Dragons", () => {
           ...DragonsMock
         ],
       });
-                
+
       await axios.get(`/api/v1/dragon`).then((response) => {
-        expect(response.data).not.toBeNull();
+        expect(response.status).toBe(200);
       })
     })
 

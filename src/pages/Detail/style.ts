@@ -8,6 +8,20 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     background-color: ${props => props.theme.color.primary};
+    a {
+        color: ${props => props.theme.color.white};
+        text-decoration: none;
+        transition: opacity .3s;
+        margin: 60px 0;
+        display: flex;
+        height: 30px;
+        width: 300px;
+        justify-content: center;
+        background-color: ${props => props.theme.color.warning};
+        font-size: 20px;
+        border-radius: 5px;
+        text-align: center;
+    }
 `;
 
 export const BoxDragon = styled.div`

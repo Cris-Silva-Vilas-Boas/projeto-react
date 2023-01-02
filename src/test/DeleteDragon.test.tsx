@@ -17,10 +17,11 @@ describe("delete dragon", () => {
   describe("when API call is successful", () => {
 
     it("should remove a dragon", async () => {
-      mock.onDelete(`/api/v1/dragon/${DragonsMock[0].id}`).reply(204, DragonsMock[0].id);
+      mock.onDelete(`/api/v1/dragon/${DragonsMock[0].id}`).reply(204, DragonsMock[0]);
       await axios.delete(`/api/v1/dragon/${DragonsMock[0].id}`)
         .then((response) => {
           expect(response.status).toEqual(204);
+          expect(response.data).toEqual(DragonsMock[0]);
       })   
     })
   })

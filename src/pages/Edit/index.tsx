@@ -84,15 +84,6 @@ const Edit: React.FC = () =>{
                     onChange={handleChange}
                 />
 
-                <Input 
-                    required
-                    type='text'
-                    placeholder="Data de criação"
-                    name="createdAt"
-                    defaultValue={olDragons.createdAt}
-                    onChange={handleChange}
-                />
-
                 <Button type="submit">Salvar</Button>
             </Form>
             {modal && (<Modal header='Editado' message="Autalizado com sucesso" isModalVisible={modal} close={togglePostModal}/>)}
