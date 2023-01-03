@@ -16,7 +16,7 @@ interface IDragonCard {
     tagColor: string;
 }
 
-const HistoryFinanceCard: React.FC<IDragonCard> = ({
+const DragonCard: React.FC<IDragonCard> = ({
     name,
     onClickDelete,
     rotaDetails,
@@ -37,4 +37,4 @@ const HistoryFinanceCard: React.FC<IDragonCard> = ({
 );
 
 
-export default HistoryFinanceCard;
+export default DragonCard;

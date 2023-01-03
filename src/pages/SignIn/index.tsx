@@ -17,7 +17,7 @@ const SignIn: React.FC = () =>{
     return( 
        <Container>
             <Logo>
-                 <img src={logoImg} alt="Minha carteira" />
+                 <img src={logoImg} alt="Projeto react" />
                  <h2>Projeto react</h2>
             </Logo>
             <Form onSubmit={() => signIn(email, password)}>

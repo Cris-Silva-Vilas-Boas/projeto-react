@@ -5,7 +5,7 @@ import Error from '../../components/Error';
 const NotFound: React.FC  = () =>{
     return( 
         <Container>
-            <Error title='Página não encontrada'/>
+            <Error title='Página não encontrada' />
         </Container>
     );
 }

@@ -13,6 +13,7 @@ export const Container = styled.div`
 export const Modal = styled(Container)`
     position: fixed;
     width: 300px;
+    height: 200px;
     color: ${props => props.theme.color.black};
     padding: 1.2rem;
     border-radius: 0.5rem;

@@ -10,11 +10,10 @@ export const Container = styled.li`
     border-radius: 10px;
     margin: 10px 0;
     padding: 12px 10px;
-    height: 110px;
+    height: 110x;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
     transition: all .3s;
     position: relative;
     &:hover {

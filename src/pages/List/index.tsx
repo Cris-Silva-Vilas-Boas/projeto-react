@@ -28,7 +28,7 @@ const List: React.FC  = () =>{
             .catch((err) => {
                 console.log(err);
                 setLoading(false);
-                setErro(true)
+                setErro(true);
             });
         }
         loadDragons();
@@ -45,7 +45,6 @@ const List: React.FC  = () =>{
             <Error title="Erro interno"/>
         )
     }
-    
 
     dragons.sort((a, b) =>
         a.name > b.name ? 1 : -1,
@@ -61,7 +60,7 @@ const List: React.FC  = () =>{
             <ContentHeader title="Listar" lineColor="#E44C4E"> </ContentHeader>
              <Content>
                 {
-                dragons.map((dragon) => {
+                 dragons.map((dragon) => {
                     const onClickDelete = () => {
                         Dragons.deleteDragon(dragon.id)
                         .then((data) => {
@@ -70,6 +69,7 @@ const List: React.FC  = () =>{
                         })
                         .catch((err) => {
                             console.log(err);
+                            setErro(true);
                         });
                     } 
 
@@ -83,7 +83,6 @@ const List: React.FC  = () =>{
                             tagColor="#F7931B"
                         /> 
                     )
-                        
                 })}
             </Content>  
             {modal && (<Modal header='Excluído' message="Excluído com sucesso" isModalVisible={modal} close={togglePostModal}/>)}

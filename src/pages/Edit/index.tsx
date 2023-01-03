@@ -22,7 +22,7 @@ const Edit: React.FC = () =>{
     const [modal, setModal] = useState(false);
 
     useEffect(()=>{
-        async function loadDragons(){
+    async function loadDragons(){
             await Dragons.getIdDragon(`${id}`)
             .then((data) => {
                 oldSetDragons(data);
@@ -51,7 +51,12 @@ const Edit: React.FC = () =>{
     };
     
     const onSubmit =(e: React.FormEvent) =>{
-        Dragons.alterDragon(`${id}`, dragon);
+        Dragons.alterDragon(`${id}`, dragon).then((data) => {
+            console.log(data);
+        }).catch((err) => {
+            console.log(err);
+            setErro(true);
+        });
         e.preventDefault();
         setModal(true);
     }
@@ -86,7 +91,7 @@ const Edit: React.FC = () =>{
 
                 <Button type="submit">Salvar</Button>
             </Form>
-            {modal && (<Modal header='Editado' message="Autalizado com sucesso" isModalVisible={modal} close={togglePostModal}/>)}
+            {modal && (<Modal header='Editado' message="Atualizado com sucesso" isModalVisible={modal} close={togglePostModal}/>)}
 
         </Container>
     );
